@@ -56,7 +56,7 @@ public class Main {
 
 /**
  * 소요시간: 0.124초
- * 시간복잡도: O(T.length - S.length) ~ O(N)
+ * 시간복잡도: O(2^N)
  * 공간복잡도: O(T.length + S.length) ~ O(N)
  */
 
