@@ -48,12 +48,6 @@ public class Main {
         m = sc.nextInt();
         v = sc.nextInt();
 
-        // int[][] edges = new int[m][2];
-        // for (int i = 0; i < m; i++) {
-        // edges[i][0] = sc.nextInt();
-        // edges[i][1] = sc.nextInt();
-        // }
-
         // 인접 행렬 생성
         matrix = new int[n][n];
         for (int i = 0; i < m; i++) {
@@ -76,10 +70,10 @@ public class Main {
  * 링크 : https://www.acmicpc.net/problem/1260
  * 성공여부 : X
  * 풀이시간 : 다시 공부하느라 2h
- * 시간복잡도 : 
- * 공간 복잡도 : 
+ * 시간복잡도 : dfs = On+m) / bfs - O(n^2)
  * 메모리 : 47628 KB
  * 소요 시간 : 780 ms
  * 
- * Arrays.fill() - 배열을 초기화시켜주는 메소드
+ * Arrays.fill() : 배열을 초기화시켜주는 메소드
+ * 다음에 DFS 구현시 stack을 사용해보자.
  */

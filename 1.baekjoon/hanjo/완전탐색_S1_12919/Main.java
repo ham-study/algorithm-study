@@ -64,5 +64,7 @@ public class Main {
  * 성공여부 : 재귀까지는 생각했으나 두 조건을 동시 실행해야 하는 경우에서 뇌정지가 와서 결국 구글링 함
  * 풀이시간 : 1h +
  * 시간복잡도 : O(n) (재귀가 n번 돌때)
- * 공간 복잡도 : 
+ * 
+ * StringBuilder - reverse : 문자열을 거꾸로 돌리기
+ * StringBuilder - deleteCharAt : 문자열에서 인덱스에 해당하는 값을 삭제
  */
