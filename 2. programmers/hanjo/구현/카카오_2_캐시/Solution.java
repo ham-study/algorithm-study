@@ -49,5 +49,10 @@ class Solution {
     }
 }
 
-// 풀이시간 03:14 ~
-// LRU -> 가장 오랫동안 참조되지 않은 페이지를 교체
+/**
+ * 문제 : https://programmers.co.kr/learn/courses/30/lessons/17680
+ * 소요시간 : 45m
+ * LRU -> 가장 오랫동안 참조되지 않은 페이지를 교체
+ * ArrayList와 LinkedList 차이
+ */
+
