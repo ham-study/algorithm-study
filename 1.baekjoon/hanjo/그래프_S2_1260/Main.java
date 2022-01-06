@@ -80,5 +80,5 @@ public class Main {
  * 소요 시간 : 780 ms
  * 
  * Arrays.fill() : 배열을 초기화시켜주는 메소드
- * 다음에 DFS 구현시 stack을 사용해보자.
+ * 다음에 DFS 구현시 stack을 사용해보자. + 인접리스트도
  */
