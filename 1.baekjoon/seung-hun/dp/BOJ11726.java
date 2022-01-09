@@ -22,3 +22,8 @@ class BOJ11726 {
 		System.out.println(next);
     }
 }
+/**
+ * 소요시간: 10분
+ * 시간복잡도: O(N)
+ * 공간복잡도: O(1)
+ */
