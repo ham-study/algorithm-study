@@ -4,7 +4,7 @@
  풀이시간 : 30분
  시간복잡도 : O(n) (n: 입력 길이) 입력 길이만큼 반복문을 돌기 때문(bottom-up)
  공간복잡도 : O(n)
- 
+
  *******************************************************************************/
 
 import java.io.*;
@@ -14,8 +14,9 @@ public class Main {
     public static void main(String[] args) throws IOException {
         var br = new BufferedReader(new InputStreamReader(System.in));
         int size = Integer.parseInt(br.readLine());
+        br.close();
 
-        int[] dp = new int[size + 1];
+        int[] dp = new int[1001];
         dp[1] = 1;
         dp[2] = 2;
 
