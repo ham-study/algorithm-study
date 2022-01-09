@@ -15,6 +15,8 @@ public class Main {
         int b = sc.nextInt();
 
         System.out.println(solution(a, b));
+        
+        sc.close();
     }
     
 }
@@ -24,7 +26,10 @@ public class Main {
  * 링크 : 
  * 성공여부 : 
  * 풀이시간 : 
+ * 
  * 시간복잡도 : 
- * 공간 복잡도 : 
+ * 메모리 : KB
+ * 소요 시간 : ms
+ * 
+ * 메모
  */
-

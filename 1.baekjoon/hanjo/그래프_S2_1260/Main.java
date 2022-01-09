@@ -1,5 +1,6 @@
 package 그래프_S2_1260;
 
+import java.io.*;
 import java.util.*;
 
 public class Main {
@@ -41,18 +42,21 @@ public class Main {
         }
     }
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
 
-        n = sc.nextInt();
-        m = sc.nextInt();
-        v = sc.nextInt();
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        n = Integer.parseInt(st.nextToken());
+        m = Integer.parseInt(st.nextToken());
+        v = Integer.parseInt(st.nextToken());
 
         // 인접 행렬 생성
         matrix = new int[n][n];
         for (int i = 0; i < m; i++) {
-            int v1 = sc.nextInt() - 1;
-            int v2 = sc.nextInt() - 1;
+            st = new StringTokenizer(br.readLine());
+            int v1 = Integer.parseInt(st.nextToken()) - 1;
+            int v2 = Integer.parseInt(st.nextToken()) - 1;
             matrix[v1][v2] = 1;
             matrix[v2][v1] = 1;
         }
@@ -70,10 +74,11 @@ public class Main {
  * 링크 : https://www.acmicpc.net/problem/1260
  * 성공여부 : X
  * 풀이시간 : 다시 공부하느라 2h
- * 시간복잡도 : dfs = On+m) / bfs - O(n^2)
+ * 
+ * 시간복잡도 : dfs = O(n+m) / bfs - O(n^2)
  * 메모리 : 47628 KB
  * 소요 시간 : 780 ms
  * 
  * Arrays.fill() : 배열을 초기화시켜주는 메소드
- * 다음에 DFS 구현시 stack을 사용해보자.
+ * 다음에 DFS 구현시 stack을 사용해보자. + 인접리스트도
  */
