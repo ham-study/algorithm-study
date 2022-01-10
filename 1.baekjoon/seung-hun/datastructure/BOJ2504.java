@@ -10,7 +10,7 @@ class BOJ2504 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         pair = Map.of(-2, -1 , -4, -3);
-        numMap = Map.of(-1, 2, -3, 3);
+        numMap = Map.of(-1, 2, -3, 3); 
         
         String string = br.readLine();
 
@@ -35,7 +35,7 @@ class BOJ2504 {
 
         System.out.println(solve(convert));
     }
-    
+
     private static int solve(int[] arr) {
 
         int result = 0;
@@ -67,7 +67,7 @@ class BOJ2504 {
                 stack.add(num);
             }
         }
-
+        
         if (stack.contains(-1) || stack.contains(-3))
             return 0;
 
