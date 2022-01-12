@@ -2,6 +2,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -17,12 +18,11 @@ public class Main {
         for (int i = 0; i < n; i++) {
             String input = bufferedReader.readLine();
             makeAnagram(input);
+            StringBuffer sb = new StringBuffer(input);
+            String reversed = sb.reverse().toString();
+            makeAnagram(reversed);
+            printAnswer();
         }
-
-        for (String str : answers.stream().distinct().collect(Collectors.toList())) {
-            System.out.println(str);
-        }
-
     }
 
     public static void makeAnagram(String str) {
@@ -37,5 +37,13 @@ public class Main {
                 answers.add(String.valueOf(sb));
             }
         }
+    }
+
+    public static void printAnswer(){
+        List<String> collect = answers.stream().distinct().sorted().collect(Collectors.toList());
+        for (String str : collect) {
+            System.out.println(str);
+        }
+        answers = new ArrayList<>();
     }
 }
