@@ -63,7 +63,7 @@ public class Main {
 }
 
 /**
- * 링크 : https://www.acmicpc.net/problem/2110
+ * 링크 : https://www.acmicpc.net/problem/2110 
  * 성공여부 : 실패
  * 풀이시간 : 3h
  * 
