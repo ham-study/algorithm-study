@@ -1,4 +1,4 @@
-package 자료구조_S2_2504;
+package 자료구조_S2_괄호의값;
 
 import java.io.*;
 import java.util.*;

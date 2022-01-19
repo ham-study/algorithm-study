@@ -1,4 +1,4 @@
-package 동적계획법_G5_9251;
+package 동적계획법_G5_LCS;
 
 import java.io.*;
 
