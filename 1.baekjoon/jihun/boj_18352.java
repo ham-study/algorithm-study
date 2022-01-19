@@ -51,7 +51,7 @@ public class Main {
             }
         }
 
-        printResult(Q); // q가 비어있을 경우임 (-1일 출력될 것)
+        printResult(Q); //Q가 비어있을 경우임 (-1일 출력될 것)
     }
 
     private static void printResult(Queue<Integer> results) {
