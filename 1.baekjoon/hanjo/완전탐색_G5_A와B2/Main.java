@@ -1,4 +1,4 @@
-package 완전탐색_S1_12919;
+package 완전탐색_G5_A와B2;
 
 import java.io.*;
 

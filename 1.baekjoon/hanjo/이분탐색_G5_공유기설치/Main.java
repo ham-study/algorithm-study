@@ -1,4 +1,4 @@
-package 이분탐색_G5_2110;
+package 이분탐색_G5_공유기설치;
 
 import java.io.*;
 import java.util.*;

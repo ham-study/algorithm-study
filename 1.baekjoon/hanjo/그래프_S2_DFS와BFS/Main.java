@@ -1,4 +1,4 @@
-package 그래프_S2_1260;
+package 그래프_S2_DFS와BFS;
 
 import java.io.*;
 import java.util.*;
