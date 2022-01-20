@@ -43,32 +43,40 @@ class Main {
 
     public static void bfs() {
         int[] visited = new int[nodeQuantity + 1];
+        int[] dist = new int[nodeQuantity + 1];
+
         Queue<Integer> queue = new LinkedList<>();
-        int count = 1;
+        int count = 0;
 
         queue.add(startNode);
+        visited[startNode] = 1;
 
         while (!queue.isEmpty()) {
-            Integer pollNode = queue.poll();
-            visited[pollNode] = 1;
+            count++;
 
-            if (count == shortest) {
+            if (dist[queue.peek()] == shortest) {
                 break;
             }
+
+            Integer pollNode = queue.poll();
 
             for (Integer linkedNode : nodes.get(pollNode)) {
                 if (visited[linkedNode] == 0) {
                     queue.add(linkedNode);
+                    visited[linkedNode] = 1;
+                    dist[linkedNode] = count;
                 }
             }
-            count++;
         }
 
         if (queue.isEmpty()) {
             System.out.println(-1);
         } else {
             while (!queue.isEmpty()) {
-                System.out.println(queue.poll());
+                Integer pollNode = queue.poll();
+                if (dist[pollNode] == shortest) {
+                    System.out.println(pollNode);
+                }
             }
         }
     }
