@@ -1,6 +1,6 @@
 import java.io.*;
 import java.util.*;
-public class Main {
+public class BOJ14499 {
     private static final int UP = 0;
     private static final int FRONT = 1;
     private static final int RIGHT = 2;
