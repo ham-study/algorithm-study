@@ -23,7 +23,6 @@ public class Main {
         }
 
         solution(n, m, k, x, edges);
-
     }
 
     // 프로그래머스처럼 주어진다고 가정
@@ -46,7 +45,7 @@ public class Main {
         // 정점 정보 초기화
         int[][] vertexInfo = new int[n+1][2];
         for(int i=1; i<n+1; i++){
-            vertexInfo[i][0] = Integer.MAX_VALUE;   // 가중치
+            vertexInfo[i][0] = Integer.MAX_VALUE;   // 가중치 == 누적경로
             vertexInfo[i][1] = 0;   // 방문여부
         }
 
@@ -56,7 +55,7 @@ public class Main {
         vertexInfo[x][0] = 0;
         vertexInfo[x][1] = 1;
 
-        // 다익스트라 bfs 
+        // 다익스트라 + bfs 
         ArrayList<Integer> correctVertex = new ArrayList<>();
         while(!queue.isEmpty()){
             int curV = queue.poll();
@@ -87,3 +86,23 @@ public class Main {
         }
     }
 }
+
+/**
+ * ================================================================================
+ * 링크 : https://www.acmicpc.net/problem/18352
+ * 성공여부 : 실패 
+ * 풀이시간 : 1h30m (다익스트라 공부 다시함)
+ * 
+ * 시간복잡도 : O(정점수*간선수)
+ * 메모리 : 372108 KB
+ * 소요 시간 : 1552 ms
+ * ================================================================================
+ * 
+ * 최단경로 구하는 것 == 가중치가 1인 간선에서의 최소 가중치 -> 다익스트라를 사용하기.
+ * 
+ * 이 문제는 모든 간선의 가중치가 1이기 때문에 다음정점을 고를때 특별한 처리를 해주지 않았음
+ * 하지만 각 간선의 가중치가 다르다면, 다음정점 선택시 가중치가 제일 작은 정점을 선택해주어야함
+ * -> 이 때 힙을 사용해야함 (PriorityQueue)
+ * 
+ * 
+ */
