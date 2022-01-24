@@ -44,20 +44,20 @@ public class Main {
 
     public final static int INF = Integer.MAX_VALUE;
     public static int N;
-    public static HashMap<Integer, ArrayList<Vertex>> adjList;
+    public static HashMap<Integer, ArrayList<Vertex>> graph;
 
     public static int solution(int n, int e, int[][] edges, int v1, int v2) {
         // 전역변수 설정
         N = n;
 
         // 인접리스트 만들기
-        adjList = new HashMap<>();
+        graph = new HashMap<>();
         for (int i = 1; i <= n; i++) {
-            adjList.put(i, new ArrayList<Vertex>());
+            graph.put(i, new ArrayList<Vertex>());
         }
         for (int[] edge : edges) {
-            adjList.get(edge[0]).add(new Vertex(edge[1], edge[2]));
-            adjList.get(edge[1]).add(new Vertex(edge[0], edge[2]));
+            graph.get(edge[0]).add(new Vertex(edge[1], edge[2]));
+            graph.get(edge[1]).add(new Vertex(edge[0], edge[2]));
         }
 
         // shortest path 1 : 1 -> v1 -> v2 -> n 
@@ -85,17 +85,17 @@ public class Main {
         Arrays.fill(distance, 1, N+1, INF);
         distance[from] = 0;
 
-        PriorityQueue<Integer> pq = new PriorityQueue<>();
-        pq.offer(from);
+        PriorityQueue<Vertex> pq = new PriorityQueue<>();
+        pq.offer(new Vertex(from, 0));
 
         while (!pq.isEmpty()) {
-            int curV = pq.poll();
+            Vertex curV = pq.poll();
 
-            for (Vertex nextV : adjList.get(curV)) {
-                int newDistance = distance[curV] + nextV.weight;
+            for (Vertex nextV : graph.get(curV.num)) {
+                int newDistance = distance[curV.num] + nextV.weight;
                 if (distance[nextV.num] > newDistance) {
                     distance[nextV.num] = newDistance;
-                    pq.offer(nextV.num);
+                    pq.offer(nextV);
                 }
             }
         }
@@ -113,7 +113,7 @@ public class Main {
  * 
  * 시간복잡도 : O()
  * 메모리 : 86284 KB
- * 소요 시간 : 1112 ms
+ * 소요 시간 : 1112 ms / 우선순위큐 사용시 - 964 ms
  * ================================================================================
  * 
  * 다익스트라를 어떻게 활용하는지가 중요한 문제
@@ -146,7 +146,7 @@ public class Main {
  * 
  * PriorityQueue 에서 결과를 받으면...
  * 1(비교대상이 큰 경우): 비교대상을 앞으로 보냄 -> 내림차순
- * 0 : 냅둔다
+ * 0 : 비교대상을 뒤로 보냄
  * -1(비교대상이 작은 경우) : 비교대상을 뒤로 보냄 -> 오름차순
  *
  */
