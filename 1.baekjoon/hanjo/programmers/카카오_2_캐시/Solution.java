@@ -1,4 +1,4 @@
-package 구현.카카오_2_캐시;
+package 카카오_2_캐시;
 
 import java.util.*;
 
