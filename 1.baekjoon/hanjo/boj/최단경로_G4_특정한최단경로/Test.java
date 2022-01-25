@@ -1,4 +1,4 @@
-package 그래프_G4_특정한최단경로;
+package 최단경로_G4_특정한최단경로;
 
 public class Test {
     public static void main(String[] args) {

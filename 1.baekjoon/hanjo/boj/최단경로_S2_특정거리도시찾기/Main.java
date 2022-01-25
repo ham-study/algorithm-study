@@ -1,4 +1,4 @@
-package 그래프_S2_특정거리도시찾기;
+package 최단경로_S2_특정거리도시찾기;
 
 import java.io.*;
 import java.util.*;
