@@ -4,21 +4,42 @@ import java.io.InputStreamReader;
 
 class Main {
 
+    private static int n;
+    private static int[] chessMap;
+    private static int count;
+
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        int n = Integer.parseInt(bufferedReader.readLine());
-
-
+        n = Integer.parseInt(bufferedReader.readLine());
+        chessMap = new int[n];
+        count = 0;
+        dfs(0);
+        System.out.println(count);
+        bufferedReader.close();
     }
 
-    public static boolean canAttack(int target1I, int target1J, int target2I, int target2J) {
-        if (target1I == target2I || target1J == target2J) {
-            return true;
+    public static void dfs(int depth) {
+        if (depth == n) {
+            count++;
+            return;
         }
-        if (Math.abs(target1I - target2I) == Math.abs(target1J - target2J)) {
-            return true;
+        for (int i = 0; i < n; i++) {
+            chessMap[depth] = i;
+            if (possible(depth)) {
+                dfs(depth + 1);
+            }
+        }
+    }
+
+    public static boolean possible(int col) {
+        for (int i = 0; i < col; i++) {
+            if (chessMap[col] == chessMap[i]) {
+                return false;
+            } else if (Math.abs(col - i) == Math.abs(chessMap[col] - chessMap[i])) {
+                return false;
+            }
         }
 
-        return false;
+        return true;
     }
 }
