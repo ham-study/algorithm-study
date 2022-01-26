@@ -3,9 +3,9 @@
 
 <br>
 
-## Week4
+### Week4
 
-|날짜|카테고리|링크|풀이여부|
+|날짜|카테고리|링크|풀었니?|
 |---|---|---|---|
 |월|자료구조-스택/큐|https://programmers.co.kr/learn/courses/30/lessons/42583|O|
 |화|그래프-탐색|https://www.acmicpc.net/problem/1325||
