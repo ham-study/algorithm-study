@@ -42,7 +42,7 @@ public class Solution {
         long right = (long)times[times.length - 1] * n;
         
         // 틀린점 : left == right 인 경우에도 최소가 포함됨
-        while(left <= right) {
+        while(left < right) {
 
             long mid = (left + right)/2;
             long people = 0;
@@ -80,7 +80,6 @@ public class Solution {
         // System.out.println(try1(10, new int[]{6, 8, 10}));  // 30
 
     }
-    
 }
 
 
@@ -90,7 +89,7 @@ public class Solution {
  * 성공여부 : 실패
  * 풀이시간 : 2h 30m
  * 
- * 시간복잡도 : 
+ * 시간복잡도 : O( log(최대소요시간=n * 10억) )
  * 메모리(테케7) : 94.4 MB
  * 소요 시간 : 104.13 ms
  * ================================================================================
