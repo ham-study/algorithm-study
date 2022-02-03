@@ -1,26 +1,65 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
 
-class Main {
+public class Main {
 
-    public static void main(String[] args) throws IOException {
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        String[] input = bufferedReader.readLine().split(" ");
+    static int min = Integer.MAX_VALUE;
+    static int subin, sister;
+    static boolean[] visited;
+    static int max = 100000;
 
-        int subin = Integer.parseInt(input[0]);
-        int sister = Integer.parseInt(input[1]);
+    public static void main(String args[]) {
+        Scanner scan = new Scanner(System.in);
 
-        int sum = 0;
-        int tempLocation = subin;
-        while (subin <= sister) {
-            if (subin == sister) {
-                break;
+        subin = scan.nextInt();
+        sister = scan.nextInt();
+
+        visited = new boolean[max + 1];
+        bfs();
+        System.out.println(min);
+    }
+
+    public static void bfs() {
+        Queue<Node> queue = new LinkedList<>();
+        queue.offer(new Node(subin, 0));
+
+        while (!queue.isEmpty()) {
+            Node pollNode = queue.poll();
+            visited[pollNode.getLocation()] = true;
+
+            if (pollNode.location == sister) {
+                min = Math.min(min, pollNode.getTime());
             }
 
-            if (tempLocation * 2 < sister) {
-                tempLocation = tempLocation * 2;
+            if (pollNode.location * 2 <= max && !visited[pollNode.location * 2]) {
+                queue.offer(new Node(pollNode.getLocation() * 2, pollNode.getTime()));
             }
+            if (pollNode.location + 1 <= max && !visited[pollNode.location + 1]) {
+                queue.offer(new Node(pollNode.getLocation() + 1, pollNode.getTime() + 1));
+            }
+            if (pollNode.location - 1 >= 0 && !visited[pollNode.location - 1]) {
+                queue.offer(new Node(pollNode.getLocation() - 1, pollNode.getTime() + 1));
+            }
+        }
+    }
+
+    public static class Node {
+
+        private int location;
+        private int time;
+
+        public Node(int x, int time) {
+            this.location = x;
+            this.time = time;
+        }
+
+        public int getLocation() {
+            return location;
+        }
+
+        public int getTime() {
+            return time;
         }
     }
 }
