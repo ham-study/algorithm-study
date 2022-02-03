@@ -26,11 +26,14 @@ public class Main {
             distance[i] = Integer.MAX_VALUE;
         }
 
-        PriorityQueue<Integer> queue = new PriorityQueue<>((o1, o2) -> distance[o1] - distance[o2]);
+        // 우선순위큐의 정렬 기준이 큐 외부에 있음 -> 정렬 기준이 변경될때마다 정렬이 바뀐다.. (잘못된 풀이)
+        // PriorityQueue<Integer> queue = new PriorityQueue<>((o1, o2) -> distance[o1] - distance[o2]);
+
+        Queue<Integer> queue = new LinkedList<>();
         distance[n] = 0;
         queue.offer(n);
 
-        // 다익스트라
+        // 다익스트라 
         while (!queue.isEmpty()) {
 
             int curV = queue.poll();
