@@ -51,7 +51,7 @@ class Main {
             ArrayList<Integer> counts = new ArrayList<>();
 
             for (int i = 1; i <= input.length() - 2; i++) {
-                for (int j = i + 1; j < input.length(); j++) {
+                for (int j = i + 1; j < input.length() - 1; j++) {
                     String temp = input;
                     while (temp.length() > 1) {
                         String sub1 = temp.substring(0, i);
