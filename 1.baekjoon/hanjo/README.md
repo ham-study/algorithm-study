@@ -1,12 +1,22 @@
 # 개인 문제풀이
 > 최소 하루 한문제 더 풀기
 
+### Week6
+
+|날짜|카테고리|링크|풀었니?|
+|---|---|---|---|
+|월|완전탐색|https://programmers.co.kr/learn/courses/30/lessons/42839||
+|화||||
+|수||||
+|목||||
+|금||||
+
 ### Week5
 
 |날짜|카테고리|링크|풀었니?|
 |---|---|---|---|
 |목|자료구조-힙|https://programmers.co.kr/learn/courses/30/lessons/42627|O|
-|금|완전탐색|https://programmers.co.kr/learn/courses/30/lessons/42839||
+|금|||X|
 
 <br>
 
