@@ -1,12 +1,21 @@
 # 개인 문제풀이
 > 최소 하루 한문제 더 풀기
 
+### 카카오 꺼내먹기
+
+|날짜|링크|풀었니?|
+|---|---|---|
+||https://programmers.co.kr/learn/courses/30/lessons/92341||
+||https://programmers.co.kr/learn/courses/30/lessons/72412||
+
+<br>
+
 ### Week6
 
 |날짜|카테고리|링크|풀었니?|
 |---|---|---|---|
-|화|완전탐색|https://programmers.co.kr/learn/courses/30/lessons/42839||
-|수|그래프-탐색|https://programmers.co.kr/learn/courses/30/lessons/43165||
+|화|완전탐색|https://programmers.co.kr/learn/courses/30/lessons/42839|O|
+|수|그래프-탐색|https://programmers.co.kr/learn/courses/30/lessons/43165|O|
 |목|탐욕법|https://programmers.co.kr/learn/courses/30/lessons/42860||
 |금|그래프-탐색|https://programmers.co.kr/learn/courses/30/lessons/43162||
 
