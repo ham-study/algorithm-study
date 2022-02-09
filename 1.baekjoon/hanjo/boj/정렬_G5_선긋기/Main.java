@@ -24,28 +24,15 @@ public class Main {
 
     public static int solution(int[][] coords){
         
-        // for(int i=0; i<coords.length; i++){
-        //     Arrays.sort(coords[i]);
-        // }
-        Arrays.sort(coords, (o1, o2) -> {
-            int result = o1[0] - o2[0];
-            if(result == 0){
-                result = o1[1] - o2[1];
-            }
-            return result;
-        });
+        Arrays.sort(coords, (o1, o2) -> o1[0] - o2[0]);
 
         int count = 0;
         int[] cur = new int[]{coords[0][0], coords[0][1]};
         for(int[] coord : coords){
-
-            // System.out.println(Arrays.toString(cur));
-            // System.out.println(count);
-            
-
             if(cur[1] >= coord[0]){
-                if(cur[1] <= coord[1])
+                if(cur[1] <= coord[1]){
                     cur[1] = coord[1];
+                }
             }
             else{
                 count += cur[1] - cur[0];
@@ -54,10 +41,7 @@ public class Main {
             }
         }
 
-        // System.out.println(Arrays.toString(cur));
-        // System.out.println(count);
         count += cur[1] - cur[0];
-
         return count;
     }
 }
@@ -65,13 +49,16 @@ public class Main {
 /**
  * ================================================================================
  * 링크 : https://www.acmicpc.net/problem/2170
- * 성공여부 : 
- * 풀이시간 : 
+ * 성공여부 : 성공
+ * 풀이시간 : 1h
  * 
- * 시간복잡도 : 
- * 메모리 : KB
- * 소요 시간 : ms
+ * 시간복잡도 : 정렬(DualPivotQuicksort) -> O(n*logn) / 로직 -> O(n)
+ * 메모리 : 278196 KB
+ * 소요 시간 : 2876 ms
  * ================================================================================
  * 
+ * 정렬만 되어있다면 쉬운 문제
+ * 하지만 맨처음에 cur 좌표와 coord 좌표의 좌우 모든 케이스를 고려하지 않고 코딩해서 시간 다잡아먹음.. 
+ * 처음 구현방식 구상할때 꼼꼼하게 케이스를 체크할 필요있음
  * 
  */ 

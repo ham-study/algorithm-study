@@ -5,11 +5,10 @@
 
 |날짜|카테고리|링크|풀었니?|
 |---|---|---|---|
-|월|완전탐색|https://programmers.co.kr/learn/courses/30/lessons/42839||
-|화||||
-|수||||
-|목||||
-|금||||
+|화|완전탐색|https://programmers.co.kr/learn/courses/30/lessons/42839||
+|수|그래프-탐색|https://programmers.co.kr/learn/courses/30/lessons/43165||
+|목|탐욕법|https://programmers.co.kr/learn/courses/30/lessons/42860||
+|금|그래프-탐색|https://programmers.co.kr/learn/courses/30/lessons/43162||
 
 ### Week5
 
