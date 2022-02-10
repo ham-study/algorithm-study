@@ -1,14 +1,14 @@
 # 개인 문제풀이
 > 최소 하루 한문제 더 풀기
 
+<br>
+
 ### 카카오 꺼내먹기
 
 |날짜|링크|풀었니?|
 |---|---|---|
 ||https://programmers.co.kr/learn/courses/30/lessons/92341||
 ||https://programmers.co.kr/learn/courses/30/lessons/72412||
-
-<br>
 
 ### Week6
 
@@ -25,8 +25,6 @@
 |---|---|---|---|
 |목|자료구조-힙|https://programmers.co.kr/learn/courses/30/lessons/42627|O|
 |금|||X|
-
-<br>
 
 ### Week4
 
