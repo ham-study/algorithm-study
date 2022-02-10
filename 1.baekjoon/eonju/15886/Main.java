@@ -18,7 +18,7 @@ public class Main {
                     count++;
                     flag = road[i];
                 } else {
-                    answer += 1;
+                    answer++;
                     count = 0;
                     flag = road[i];
                 }
