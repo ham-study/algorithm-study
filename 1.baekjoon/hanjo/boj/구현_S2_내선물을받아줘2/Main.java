@@ -14,16 +14,13 @@ public class Main {
 
         String map = br.readLine();
 
-        System.out.println(solution(map));
+        System.out.println(solution(n, map));
     }
 
-    public static int solution(String map){
+    public static int solution(int n, String map){
 
-        int len1 = map.length();
         map = map.replace("EW", "X");
-        int len2 = map.length();
-
-        return len1 - len2;
+        return n - map.length();
     }
 }
 
