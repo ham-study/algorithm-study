@@ -56,17 +56,19 @@ public class Main {
                 if (!isCorrectRange(nextI, nextJ)) {
                     continue;
                 }
+
                 if (isVisited(nextI, nextJ)) {
                     continue;
                 }
+
                 if (map[nextI][nextJ] == 0) {
                     queue.add(new int[]{nextI, nextJ, nextCount, breakWallCount});
                     visited[nextI][nextJ] = nextCount;
                     continue;
                 }
+
                 if (map[nextI][nextJ] == 1 && breakWallCount == 0) {
                     queue.add(new int[]{nextI, nextJ, nextCount, breakWallCount + 1});
-                    visited[nextI][nextJ] = nextCount;
                 }
             }
 
