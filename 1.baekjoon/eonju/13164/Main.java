@@ -5,6 +5,8 @@ import java.util.Arrays;
 
 public class Main {
 
+    private static int[] dist;
+
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         String[] input = bufferedReader.readLine().split(" ");
@@ -16,33 +18,18 @@ public class Main {
             .toArray();
 
         //차이 구하기
-        int[] dist = new int[childQuantity - 1];
+        dist = new int[childQuantity - 1];
         for (int i = 0; i < dist.length; i++) {
             dist[i] = children[i + 1] - children[i];
         }
 
-        int[] sortedArray = Arrays.stream(dist)
-            .sorted()
-            .distinct()
-            .toArray();
+        Arrays.sort(dist);
 
-        int count = 0;
         int answer = 0;
-        for (int i = 0; i < sortedArray.length; i++) {
-            for (int j = 0; j < dist.length; j++) {
-                if(count == groupQuantity){
-                    System.out.println(answer);
-                    return;
-                }
-                if (sortedArray[i] == dist[j]) {
-                    int leftIdx = j;
-                    int rightIdx = j+1;
-                    answer += dist[j];
-                    dist[leftIdx] = -1;
-                    dist[rightIdx] = -1;
-                    dist[j] = 0;
-                }
-            }
+        for (int i = 0; i < childQuantity - groupQuantity; i++) {
+            answer += dist[i];
         }
+
+        System.out.println(answer);
     }
 }
