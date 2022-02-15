@@ -10,28 +10,15 @@
 ||https://programmers.co.kr/learn/courses/30/lessons/92341||
 ||https://programmers.co.kr/learn/courses/30/lessons/72412||
 
-### Week6
-
-|날짜|카테고리|링크|풀었니?|
-|---|---|---|---|
-|화|완전탐색|https://programmers.co.kr/learn/courses/30/lessons/42839|O|
-|수|그래프-탐색|https://programmers.co.kr/learn/courses/30/lessons/43165|O|
-|목|탐욕법|https://programmers.co.kr/learn/courses/30/lessons/42860||
-|금|그래프-탐색|https://programmers.co.kr/learn/courses/30/lessons/43162||
-
-### Week5
-
-|날짜|카테고리|링크|풀었니?|
-|---|---|---|---|
-|목|자료구조-힙|https://programmers.co.kr/learn/courses/30/lessons/42627|O|
-|금|||X|
-
 ### Week4
 
 |날짜|카테고리|링크|풀었니?|
 |---|---|---|---|
-|월|자료구조-스택/큐|https://programmers.co.kr/learn/courses/30/lessons/42583|O|
-|화|그래프-탐색|https://www.acmicpc.net/problem/1325|O|
-|수|||X|
-|목|구현|https://www.acmicpc.net/problem/15787|O|
-|금|||X|
+|W4D1|자료구조-스택/큐|https://programmers.co.kr/learn/courses/30/lessons/42583|O|
+|W4D2|그래프-탐색|https://www.acmicpc.net/problem/1325|O|
+|W4D4|구현|https://www.acmicpc.net/problem/15787|O|
+|W5D4|자료구조-힙|https://programmers.co.kr/learn/courses/30/lessons/42627|O|
+|W6D2|완전탐색|https://programmers.co.kr/learn/courses/30/lessons/42839|O|
+|W6D3|그래프-탐색|https://programmers.co.kr/learn/courses/30/lessons/43165|O|
+|W7D1|탐욕법|https://programmers.co.kr/learn/courses/30/lessons/42860||
+|W7D2|그래프-탐색|https://programmers.co.kr/learn/courses/30/lessons/43162||
