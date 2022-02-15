@@ -20,5 +20,5 @@
 |W5D4|자료구조-힙|https://programmers.co.kr/learn/courses/30/lessons/42627|O|
 |W6D2|완전탐색|https://programmers.co.kr/learn/courses/30/lessons/42839|O|
 |W6D3|그래프-탐색|https://programmers.co.kr/learn/courses/30/lessons/43165|O|
-|W7D1|탐욕법|https://programmers.co.kr/learn/courses/30/lessons/42860||
-|W7D2|그래프-탐색|https://programmers.co.kr/learn/courses/30/lessons/43162||
+|W7D2|탐욕법|https://programmers.co.kr/learn/courses/30/lessons/42860||
+|W7D3|그래프-탐색|https://programmers.co.kr/learn/courses/30/lessons/43162||
