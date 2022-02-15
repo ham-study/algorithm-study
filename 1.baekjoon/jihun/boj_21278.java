@@ -1,10 +1,10 @@
 /******************************************************************************
 
  문제출처 : https://www.acmicpc.net/problem/21278
- 풀이시간 : 30m - 부분성공
+ 풀이시간 : 30m
  시간복잡도 : O(nC2 * 100^2) ~ O(5천만)
  공간복잡도 : O(n)
-
+ 
  *******************************************************************************/
 
 import java.io.*;
@@ -22,36 +22,15 @@ public class Main {
 
         solve();
 
-        System.out.println(v1 + " " + v2 + " " + min);
+        System.out.println(Math.min(v1, v2) + " " + Math.max(v1, v2) + " " + min);
     }
 
     private static void solve() {
         // 100 c 2 콤비네이션
-        combination(new boolean[n + 1], 0);
-    }
-
-    private static void combination(boolean[] selected, int size) {
-        if (size == 2) {
-            var result = new ArrayList<Integer>(2);
-            for (int i = 1; i <= n; i++) {
-                if (!selected[i]) continue;
-
-                result.add(i);
-            }
-
-            bfs(result.get(0), result.get(1));
-
-            // System.out.println("v1: " + result.get(0) + " v2: " + result.get(1));
-
-            return;
-        }
-
         for (int i = 1; i <= n; i++) {
-            if (selected[i]) continue;
-
-            selected[i] = true;
-            combination(selected, size + 1);
-            selected[i] = false;
+            for (int j = i + 1; j <= n; j++) {
+                bfs(i, j);
+            }
         }
     }
 
@@ -87,6 +66,9 @@ public class Main {
         if (min > aroundSum) {
             min = aroundSum;
 
+            v1 = startv1;
+            v2 = startv2;
+        } else if (min == aroundSum) {
             if (Math.min(v1, v2) > Math.min(startv1, startv2)) {
                 v1 = startv1;
                 v2 = startv2;
