@@ -41,6 +41,7 @@ class PGMS64062 {
 
             if (cross(stones, mid, k)) {
                 left = mid;
+                answer = Math.max(answer, left);
             } else {
                 right = mid;
             }
@@ -48,22 +49,21 @@ class PGMS64062 {
 
         return answer;
     }
-
     private boolean cross(int[] stones, int count, int limit) {
         int skip = 0;
 
         for (int stone : stones) {
-            if (stone >= count) {
+            if (stone < count) {
                 skip++;
             } else {
                 skip = 0;
             }
 
             if (skip == limit) {
-                return true;
+                return false;
             }
         }
 
-        return false;
+        return true;
     }
 }
