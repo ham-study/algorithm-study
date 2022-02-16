@@ -51,8 +51,12 @@ public class Solution {
         System.out.println(solution("JEROEN"));
         // 23
         System.out.println(solution("JAN"));
+
+        // 앞으로 가다가 뒤로 가는경우
         // 7
         System.out.println(solution("ABAAAAAAAAABB"));
+
+        // 뒤로 갔다가 다시 앞으로 가는경우
         // 10
         System.out.println(solution("BBBBAAAAAB"));
         // 12
