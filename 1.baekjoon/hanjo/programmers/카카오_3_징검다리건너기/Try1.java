@@ -57,10 +57,11 @@ public class Try1 {
 
     public static void main(String[] args){
         // 3
-        // System.out.println(solution(new int[]{2, 4, 5, 3, 2, 1, 4, 2, 5, 1}, 3));
-        
+        System.out.println(solution(new int[]{2, 4, 5, 3, 2, 1, 4, 2, 5, 1}, 3));
+        // 1
         System.out.println(solution(new int[]{1}, 2));
-
+        // 0
+        System.out.println(solution(new int[]{0}, 1));
     }
 
 }
