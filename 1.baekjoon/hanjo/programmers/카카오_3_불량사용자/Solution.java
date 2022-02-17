@@ -5,7 +5,7 @@ import java.util.*;
 public class Solution {
 
     public static ArrayList<ArrayList<String>> candidates;
-    public static  ArrayList<HashSet<String>> combinations;
+    public static  HashSet<HashSet<String>> combinations;
 
     public static int solution(String[] user_id, String[] banned_id) {
 
@@ -23,41 +23,11 @@ public class Solution {
             }
         }
 
-        // ??
-        combinations = new ArrayList<>();
+        // 후보군으로 모든 조합 찾기
+        combinations = new HashSet<>();
         reculsive(0, new HashSet<String>());
 
-        //
-        ArrayList<ArrayList<String>> combList = new ArrayList<>();
-        for(var combination : combinations){
-            // hashset -> arraylist
-            combList.add(new ArrayList<String>(combination));
-        }
-
-        int answer = combinations.size();
-
-        for(int i=0; i<combList.size(); i++){
-            int count = 0;
-            for(int j=i; j<combList.size(); j++){
-                for(int k=0; k<candidates.size(); k++){
-                    String str1 = combList.get(i).get(k);
-                    String str2 = combList.get(j).get(k);
-                    if(str1.equals(str2)){
-                        count++;
-                    }
-                }
-            }
-            if(count == candidates.size()){
-                answer--;
-            }
-        }
-
-
-
-        // for(var c : combinations){
-        //     System.out.println(c);
-        // }
-        return answer;
+        return combinations.size();
     }
 
     public static boolean isMatch(String userId, String bannedId){
@@ -88,7 +58,6 @@ public class Solution {
         }
     }
 
-
     public static void main(String[] args){
         // 2
         System.out.println(solution(
@@ -107,3 +76,18 @@ public class Solution {
         ));
     }
 }
+
+/**
+ * ================================================================================
+ * 링크 : https://programmers.co.kr/learn/courses/30/lessons/64064
+ * 성공여부 : 실패
+ * 풀이시간 : 2H
+ * 
+ * 시간복잡도 : ?
+ * 테케5 : 3915.56ms, 383MB
+ * ================================================================================
+ * 
+ * 문자열 파싱 + 완전탐색(dfs) 문제
+ * HashSet은 내부 컬렉션 원소까지 모두 비교해서 중복을 제거한다는 사실을 알게됨
+ * 
+ */
