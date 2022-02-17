@@ -1,7 +1,5 @@
 package 카카오_3_징검다리건너기;
 
-import java.util.*;
-
 public class Try1 {
 
     public static int solution(int[] stones, int k) {
