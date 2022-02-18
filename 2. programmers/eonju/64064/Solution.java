@@ -1,53 +1,58 @@
-package programmers;
-
 import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.regex.Pattern;
 
-public class PMS_64064 {
+class Solution {
+    HashSet<HashSet<String>> result;
+    ArrayList<ArrayList<String>> bannedUserList;
 
     public int solution(String[] user_id, String[] banned_id) {
-        int answer = 0;
+        result = new HashSet<HashSet<String>>();
+        bannedUserList = new ArrayList<ArrayList<String>>();
 
-        ArrayList<List<String>> lists = new ArrayList<>();
-        for (int i = 0; i < banned_id.length; i++) {
-            List<String> possibleNames = findPossibleName(banned_id[i], user_id);
-            lists.add(possibleNames);
+        for (String bannedId : banned_id) {
+            // 목록의 n번째 칸에 들갈 수 있는 제재 아이디들 구함
+            bannedUserList.add(getMatchesId(bannedId, user_id));
         }
 
-        return answer;
+        dfs(new HashSet<String>(), 0);
+
+        return result.size();
     }
 
-    public static List<String> findPossibleName(String targetId, String[] user_id) {
-        ArrayList<String> possibleNames = new ArrayList<>();
-        String[] targetWords = targetId.split("");
+    void ArrayList<String> getMatchesId(String bannedId, String[] user_id) {
+        // 불량 사용자 아이디 정규 표현식으로 변환
+        // 정규 표현식에서 '.' = 임의의 문자열 1개
+        String pattern = bannedId.replace('*', '.');
 
-        for (String user : user_id) {
-            if (targetId.length() != user.length()) {
-                continue;
-            }
-            for (int i = 0; i < targetWords.length; i++) {
-                if (isPossible(targetWords, user)) {
-                    possibleNames.add(user);
-                }
-            }
+        ArrayList<String> valueList = new ArrayList<>();
+
+        for (String userId : user_id) {
+            boolean isMatch = Pattern.matches(pattern, userId);
+
+            // 정규 표현식 턴에 맞는 유저 아이디 담음
+            if (isMatch)
+                valueList.add(userId);
         }
 
-        return possibleNames;
+        return valueList;
     }
 
-    public static boolean isPossible(String[] targetWords, String userName) {
-        String[] userWords = userName.split("");
-
-        for (int i = 0; i < targetWords.length; i++) {
-            if (targetWords[i].equals("*")) {
-                continue;
-            }
-            if (!userWords[i].equals(targetWords[i])) {
-                return false;
-            }
+    void dfs(HashSet<String> add, int depth) {
+        if (depth == bannedUserList.size()) {
+            // 결과 Set에 저장
+            result.add(new HashSet<>(add));
+            return;
         }
 
-        return true;
+        // depth번째에 들어갈 수 있는 아이디 목록에서 뽑음
+        for (String userId : bannedUserList.get(depth)) {
+            // 이미 목록에 들어가있으면 담지 않음
+            if (!add.contains(userId)) {
+                add.add(userId);
+                dfs(add, depth + 1);
+                add.remove(userId);
+            }
+        }
     }
-
 }
