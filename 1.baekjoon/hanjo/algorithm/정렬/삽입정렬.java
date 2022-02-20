@@ -5,6 +5,23 @@ import java.util.*;
 public class 삽입정렬 {
 
     public static int[] insertionSort(int[] arr){
+
+        int len = arr.length;
+
+        for(int i=1; i<len; i++){
+            int key = arr[i];
+            int j = i- 1;
+            while(j >= 0){
+                if(key < arr[j]){
+                    arr[j+1] = arr[j];
+                }
+                else{
+                    break;
+                }
+                j--;
+            }
+            arr[j+1] = key;
+        }
         
         return arr;
     }
@@ -12,7 +29,7 @@ public class 삽입정렬 {
 
     public static void main(String[] args){
 
-        int[] arr = {8, 5, 6, 2, 4, 7, 1};
+        int[] arr = {8, 5, 6, 1, 4, 3, 9, 7, 2};
         
         System.out.println(Arrays.toString(insertionSort(arr)));
 
