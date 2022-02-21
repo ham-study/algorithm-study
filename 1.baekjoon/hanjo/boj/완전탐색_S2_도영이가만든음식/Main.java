@@ -1,4 +1,4 @@
-package 완전탐색_2_도영이가만든음식;
+package 완전탐색_S2_도영이가만든음식;
 
 import java.util.*;
 import java.io.*;
