@@ -5,7 +5,6 @@ import java.io.InputStreamReader;
 public class Main {
 
     private static int[][] ingredients;
-    private static boolean[] visited;
     private static int min = Integer.MAX_VALUE;
     private static int n;
 
