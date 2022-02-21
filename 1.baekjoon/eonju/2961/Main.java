@@ -1,19 +1,17 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
 
 public class Main {
 
     private static int[][] ingredients;
-    private static Stack<Integer> tempStack;
-    private static List<Integer> answer;
+    private static boolean[] visited;
+    private static int min = Integer.MAX_VALUE;
+    private static int n;
 
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        int n = Integer.parseInt(bufferedReader.readLine());
+        n = Integer.parseInt(bufferedReader.readLine());
 
         ingredients = new int[n][2];
 
@@ -26,29 +24,18 @@ public class Main {
             ingredients[i][1] = bitter;
         }
 
-        answer = new ArrayList<>();
-        Stack<Integer> stack = new Stack<>();
-        for (int i = 1; i <= n; i++) {
-            bruteForce(1, 0, stack, i);
-        }
-
-        System.out.println(answer.stream().mapToInt(i -> i).min().getAsInt());
+        bruteForce(1, 0, 0);
+        System.out.println(min);
     }
 
-    public static void bruteForce(int s, int b, Stack<Integer> stack, int quantity) {
-        if (quantity == 0) {
-            answer.add(Math.abs(b - s));
+    public static void bruteForce(int s, int b, int idx) {
+        if (idx == n) {
+            min = Math.min(min, Math.abs(s - b));
             return;
         }
 
-        for (int i = 0; i < ingredients.length; i++) {
-            if (!stack.contains(i)) {
-                tempStack = new Stack<>();
-                tempStack.addAll(stack);
-                tempStack.add(i);
-                bruteForce(s * ingredients[i][0], b + ingredients[i][1], tempStack, quantity - 1);
-            }
-        }
-    }
+        bruteForce(s * ingredients[idx][0], b + ingredients[idx][1], idx + 1);
+        bruteForce(s, b, idx + 1);
 
+    }
 }
