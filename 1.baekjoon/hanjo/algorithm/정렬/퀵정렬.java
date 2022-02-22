@@ -18,7 +18,7 @@ public class 퀵정렬 {
             // 피봇정하고 피봇 기준으로 정렬
             int pivot = left;
             int pivotNum = arr[pivot];
-            int L = left+1;
+            int L = left;
             int R = right;
 
             while(L < R){
@@ -34,17 +34,10 @@ public class 퀵정렬 {
                     arr[R] = temp;
                 }
             }
-
-            // 찾은 올바른 피봇위치에 또 스왑
-            int temp = arr[R];
-            arr[R] = arr[pivot];
-            arr[pivot] = temp;
             
             // 분할하여 반복
             reculsive(arr, left, R-1);
             reculsive(arr, R+1, right);
-
-            System.out.println(Arrays.toString(arr));
         }
     }
 
