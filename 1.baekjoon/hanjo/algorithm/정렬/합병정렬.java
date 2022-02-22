@@ -52,7 +52,6 @@ public class 합병정렬 {
                 arr[i+left] = sorted[i];
             }
         }
-    
     }
 
     public static void main(String[] args){

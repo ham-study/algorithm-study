@@ -1,4 +1,4 @@
-package 그래프_G4_집합의표현;
+package 최소비용_G4_집합의표현;
 
 import java.util.*;
 import java.io.*;
