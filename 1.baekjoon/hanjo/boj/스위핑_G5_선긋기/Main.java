@@ -1,4 +1,4 @@
-package 정렬_G5_선긋기;
+package 스위핑_G5_선긋기;
 
 import java.util.*;
 import java.io.*;
