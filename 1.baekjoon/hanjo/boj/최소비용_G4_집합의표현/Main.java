@@ -1,4 +1,4 @@
-package 그래프_G4_집합의표현;
+package 최소비용_G4_집합의표현;
 
 import java.util.*;
 import java.io.*;
@@ -37,7 +37,6 @@ public class Main {
         for(int[] command : commands){
             if(command[0] == 0){
                 union(command[1], command[2]);
-
             }
             else{
                 boolean result = isSameParent(command[1], command[2]);
@@ -54,11 +53,12 @@ public class Main {
     }
 
     public static int findParent(int x){
-        // 반복문으로 하면 시간초과남.
+        // 반복문으로 하면 65%에서 시간초과남. 
         // while(x != parent[x]){
         //     x = parent[x];
         // }
         // return x;
+
         if (x == parent[x]) {
             return x;
         }
@@ -69,14 +69,16 @@ public class Main {
         // 최상위 부모를 찾아 그것만 비교하면 됨
         x = findParent(x);
         y = findParent(y);
+
+        parent[x] = y;
  
-        if (x != y) {
-            if (x < y) {
-                parent[y] = x;
-            } else {
-                parent[x] = y;
-            }
-        }
+        // if (x != y) {
+        //     if (x < y) {
+        //         parent[y] = x;
+        //     } else {
+        //         parent[x] = y;
+        //     }
+        // }
     }
 
     public static boolean isSameParent(int x, int y){
@@ -96,7 +98,7 @@ public class Main {
  * 소요 시간 : 456 ms
  * ================================================================================
  * 
- * Union find라는 알고리즘 기초 문제
+ * 최소신장트리(MST)의 크루스칼 알고리즘에 등장하는 Union find라는 알고리즘 기초 문제
  * 배열에 부모 노드 인덱스를 저장하여 관계를 구현함
  * 인덱스 크기가 작은것을 우선순위로 하고 그 뒤로 붙이는 방식
  * 
