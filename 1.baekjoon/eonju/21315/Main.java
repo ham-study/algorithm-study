@@ -9,11 +9,13 @@ public class Main {
 
     private static int n;
     private static Queue<Integer> cards;
+    private static Queue<Integer> target;
+    private static Queue<Integer> mixed;
 
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         n = Integer.parseInt(bufferedReader.readLine());
-        Queue<Integer> target = new LinkedList<>();
+        target = new LinkedList<>();
         String[] input = bufferedReader.readLine().split(" ");
         for (String s : input) {
             target.add(Integer.parseInt(s));
@@ -33,51 +35,53 @@ public class Main {
         }
 
         StringBuilder answer = new StringBuilder();
-        for (int i = 0; i < candidate.size(); i++) {
-            Queue<Integer> mixed = mix(candidate.get(i));
-            if (target.equals(mixed)) {
-                answer.append(i).append(" ");
+        for (int k1 = 0; k1 < candidate.size(); k1++) {
+            for (int k2 = 0; k2 < candidate.size(); k2++) {
+                mixed = new LinkedList<>(cards);
+
+                mix(candidate.get(k1));
+                mix(candidate.get(k2));
+
+                if (target.equals(mixed)) {
+                    answer.append(candidate.get(k1)).append(" ").append(candidate.get(k2));
+                }
             }
         }
 
         System.out.println(answer);
     }
 
-    public static Queue<Integer> mix(int target) {
-        Queue<Integer> mixed = new LinkedList<>(cards);
+    public static void mix(int k) {
         Queue<Integer> temp = new LinkedList<>();
 
-        int upCnt1;
-        int upCnt2;
-        for (int i = 0; i < 2; i++) {
-            int level = 1;
-            upCnt1 = (int) Math.pow(2, target);
-            mix(upCnt1, mixed);
-            level++;
+        int upCnt1; // 이전에 올린 카드 갯수
+        int upCnt2; // 현재 올릴 카드 갯수
+        int level = 1;
 
-            while (level <= target + 1) {
-                temp.clear();
-                for (int j = 0; j < upCnt1; j++) {
-                    Integer poll = mixed.poll();
-                    temp.add(poll);
-                }
+        upCnt1 = (int) Math.pow(2, k);
+        mix(upCnt1, mixed);
+        level++;
 
-                upCnt2 = (int) Math.pow(2, target - level + 1);
-                mix(upCnt2, temp);
-
-                while (mixed.size() != 0) {
-                    Integer poll = mixed.poll();
-                    temp.add(poll);
-                }
-
-                mixed.addAll(temp);
-
-                upCnt1 = upCnt2;
-                level++;
+        while (level <= k + 1) {
+            temp.clear();
+            for (int j = 0; j < upCnt1; j++) {
+                Integer poll = mixed.poll();
+                temp.add(poll);
             }
-        }
 
-        return mixed;
+            upCnt2 = (int) Math.pow(2, k - level + 1);
+            mix(upCnt2, temp);
+
+            while (!mixed.isEmpty()) {
+                Integer poll = mixed.poll();
+                temp.add(poll);
+            }
+
+            mixed.addAll(temp);
+
+            upCnt1 = upCnt2;
+            level++;
+        }
     }
 
     public static void mix(int count, Queue<Integer> queue) {
@@ -86,5 +90,4 @@ public class Main {
             queue.add(poll);
         }
     }
-
 }
