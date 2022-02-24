@@ -1,8 +1,7 @@
-package 그래프_S1_효율적인해킹;
 
 import java.util.*;
 
-public class Test {
+public class Test3 {
     
     public static void main(String args[]){
         ArrayList<List<Integer>> graph = new ArrayList<>(0);
@@ -16,3 +15,5 @@ public class Test {
 
     }
 }
+
+// 초기화 테스트
