@@ -1,6 +1,4 @@
-package 최단경로_G4_특정한최단경로;
-
-public class Test {
+public class Test1 {
     public static void main(String[] args) {
 
         final int INT_MAX = Integer.MAX_VALUE;
@@ -14,7 +12,7 @@ public class Test {
         System.out.println(INT_MIN);
         System.out.println(INT_MIN - 1);
         System.out.println(INT_MIN - 2);
-
-        
     }
 }
+
+// int의 최대 최소 실험

@@ -1,10 +1,9 @@
-package 자료구조_S2_괄호의값;
 
 import java.io.*;
 import java.util.Arrays;
 import java.util.regex.*;
 
-public class Test {
+public class Test2 {
     public static void main(String[] args) throws IOException {
         // BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 

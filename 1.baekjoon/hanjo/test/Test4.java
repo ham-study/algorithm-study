@@ -1,8 +1,6 @@
-package 카카오_3_불량사용자;
-
 import java.util.*;
 
-public class Test {
+public class Test4 {
     public static void main(String args[]){
 
         HashSet<HashSet<Integer>> temp = new HashSet<>();
