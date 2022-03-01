@@ -1,4 +1,4 @@
-package 그래프_S5_적록색약;
+package 그래프_G5_적록색약;
 
 import java.io.*;
 import java.util.*;
