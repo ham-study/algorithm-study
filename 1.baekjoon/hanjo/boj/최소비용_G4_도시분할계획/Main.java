@@ -67,7 +67,7 @@ public class Main {
     public static void prim(){
 
         boolean[] isVisited = new boolean[N+1];
-        Arrays.fill(isVisited, false);
+        // Arrays.fill(isVisited, false);
 
         PriorityQueue<Node> queue = new PriorityQueue<>();
 

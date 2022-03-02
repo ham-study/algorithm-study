@@ -15,6 +15,8 @@
 |W4D2|그래프탐색_S1_효율적인해킹|https://www.acmicpc.net/problem/1325|
 |W4D1|자료구조_2_다리를지나는트럭|https://programmers.co.kr/learn/courses/30/lessons/42583|
 |W8D2|완전탐색_B2_일곱난쟁이|https://www.acmicpc.net/problem/2309|
+|W9D3|완전탐색_S5_날짜계산|https://www.acmicpc.net/problem/1476|
+|W9D3|그래프_S2_연결요소의개수|https://www.acmicpc.net/problem/11724|
 
 <br>
 
@@ -22,8 +24,6 @@
 
 |카테고리|링크|
 |---|---|
-|W9D2|완전탐색_S3_사탕게임|https://www.acmicpc.net/problem/3085|
-|완전탐색_S5_날짜계산|https://www.acmicpc.net/problem/1476|
 |완전탐색_G5_리모컨|https://www.acmicpc.net/problem/1107|
 |완전탐색_G5_테트로미노|https://www.acmicpc.net/problem/14500|
 |완전탐색_S1_카잉달력|https://www.acmicpc.net/problem/6064|
@@ -33,7 +33,6 @@
 |자료구조_S4_덱|https://www.acmicpc.net/problem/10866|
 |그래프_G5_ABCDE|https://www.acmicpc.net/problem/13023|
 |그래프_S2_DFS와BFS|https://www.acmicpc.net/problem/1260|
-|그래프_S2_연결요소의개수|https://www.acmicpc.net/problem/11724|
 |그래프_G4_이분그래프|https://www.acmicpc.net/problem/1707|
 |그래프_S1_단지번호붙이기|https://www.acmicpc.net/problem/2667|
 |그래프_S1_미로탐색|https://www.acmicpc.net/problem/2178|
