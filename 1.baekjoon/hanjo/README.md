@@ -22,7 +22,7 @@
 
 |카테고리|링크|
 |---|---|
-|완전탐색_S3_사탕게임|https://www.acmicpc.net/problem/3085|
+|W9D2|완전탐색_S3_사탕게임|https://www.acmicpc.net/problem/3085|
 |완전탐색_S5_날짜계산|https://www.acmicpc.net/problem/1476|
 |완전탐색_G5_리모컨|https://www.acmicpc.net/problem/1107|
 |완전탐색_G5_테트로미노|https://www.acmicpc.net/problem/14500|
