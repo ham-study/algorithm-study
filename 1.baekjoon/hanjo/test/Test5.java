@@ -3,6 +3,8 @@ import java.util.*;
 public class Test5 {
     public static void main(String[] args) {
 
+        System.out.println("------------ 배열 -----------------");
+
         int[] a = {1, 2, 3};
         int[] b = a;
         int[] c = {1, 2, 3};
@@ -30,9 +32,8 @@ public class Test5 {
             System.out.println("Arrays.equals(a, d)");
         }
 
-        System.out.println();
+        System.out.println("------------ 컬렉션 (LinkedList) -----------------");
         
-
         Queue<Integer> qa = new LinkedList<>();
         qa.add(1);
         Queue<Integer> qb = new LinkedList<>();
@@ -47,6 +48,8 @@ public class Test5 {
         if(qa.equals(qb)){
             System.out.println("qa.equals(qb)");
         }
+
+        System.out.println("------------ 컬렉션 (ArrayList) -----------------");
 
 
         ArrayList<Integer> aa = new ArrayList<>();
@@ -72,6 +75,42 @@ public class Test5 {
 
         //     // System.out.println("qa.equals(qb))");
         // }
+
+        System.out.println("------------ Object -----------------");
+
+
+        Object o1 = new Object();
+        Object o2 = new Object();
+
+        System.out.println(o1.hashCode());
+        System.out.println(o2.hashCode());
+        System.out.println(o1 == o2);
+        System.out.println(o1.equals(o2));
+
+        System.out.println("------------ String literal -----------------");
+
+        String s1 = "a";
+        String s2 = "a";
+
+        System.out.println(s1.hashCode());
+        System.out.println(s2.hashCode());
+        System.out.println(s1 == s2);
+        System.out.println(s1 == "a");
+        System.out.println(s1.equals(s2));
+
+
+        System.out.println("------------ String Object -----------------");
+
+        String so1 = new String("a");
+        String so2 = new String("a");
+
+        System.out.println(so1.hashCode());
+        System.out.println(so2.hashCode());
+        System.out.println(so1 == so2);
+        System.out.println(so1.equals(so2));
+
+
+
         
         // 배열은 equlas 사용시 주소값만 비교하므로 Arrays.equals()를 사용해야 내부 요소까지 비교함
         // but 컬렉션의 순서와 내용이 같다면 객체가 여러개여도 하나의 주소값을 공유한다
