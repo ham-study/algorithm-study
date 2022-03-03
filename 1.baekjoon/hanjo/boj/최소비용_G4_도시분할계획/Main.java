@@ -67,15 +67,15 @@ public class Main {
     public static void prim(){
 
         boolean[] isVisited = new boolean[N+1];
-        Arrays.fill(isVisited, false);
 
         PriorityQueue<Node> queue = new PriorityQueue<>();
 
-        queue.add(new Node(1, 0));
+        queue.offer(new Node(1, 0));
 
         while(!queue.isEmpty()){
             Node cur = queue.poll();
-
+            
+            // 다른 후보 간선으로 방문했을 수도 있음
             if(isVisited[cur.num]){
                 continue;
             }
@@ -83,7 +83,7 @@ public class Main {
             path.add(cur.weight);
 
             for(Node next : graph.get(cur.num)){
-                queue.add(next);
+                queue.offer(next);
             }
         }
     }
