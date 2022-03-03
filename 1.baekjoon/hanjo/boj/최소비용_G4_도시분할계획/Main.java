@@ -71,7 +71,7 @@ public class Main {
 
         PriorityQueue<Node> queue = new PriorityQueue<>();
 
-        queue.add(new Node(1, 0));
+        queue.offer(new Node(1, 0));
 
         while(!queue.isEmpty()){
             Node cur = queue.poll();
@@ -83,7 +83,7 @@ public class Main {
             path.add(cur.weight);
 
             for(Node next : graph.get(cur.num)){
-                queue.add(next);
+                queue.offer(next);
             }
         }
     }
