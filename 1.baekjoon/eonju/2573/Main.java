@@ -4,17 +4,16 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.StringTokenizer;
 
 public class Main {
 
     static final int[] moveI = {-1, 1, 0, 0};
     static final int[] moveJ = {0, 0, -1, 1};
+    static int[][] map;
+    static boolean[][] visited;
     static int N;
     static int M;
     static int answer = 0;
-    static int[][] map;
-    static boolean[][] visited;
 
 
     public static void main(String[] args) throws IOException {
