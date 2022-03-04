@@ -14,8 +14,6 @@ public class Main {
     static final int[] moveI = {-1, 1, 0, 0};
     static final int[] moveJ = {0, 0, -1, 1};
     static boolean[][] visited;
-    static StringTokenizer st;
-
 
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
@@ -83,7 +81,7 @@ public class Main {
 
     }
 
-    static void bfs(int i, int j) {
+    public static void bfs(int i, int j) {
         Queue<Position> queue = new LinkedList<>();
         queue.add(new Position(i, j));
         visited[i][j] = true;
